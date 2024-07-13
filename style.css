@@ -1,14 +1,15 @@
 .container{
     display: grid;
-    grid-template: 1fr 4fr/ 1fr 3fr;
+    grid-template: 1fr 4fr/ 1fr 5fr;
 }
 
 .header{
-    grid-area: 1/2/2/4;
+    grid-area: 1/2/2/3;
     width: 75vw;
     height: 20vh;
     display: grid;
     grid-template: 1fr 2fr/3fr 2fr;
+    background-color: #F4F1BB;
 }
 .header-top{
     grid-area: 1/1/2/3;
@@ -16,14 +17,18 @@
     grid-template: 1fr / 3fr 2fr;
 }
 .profile-header{
-    display: flex;
+    display: flex;  
     gap: 1vw;
-    place-self: center;
+    place-self: flex-end;
     align-items: center;
+    padding-right: 2vw;
     
 }
 .name{
     font-weight: 800;
+}
+.sidebar>*>*>svg{
+    fill: #F4F1BB;
 }
 
 .search-bar{
@@ -32,6 +37,10 @@
     align-items: center;
     justify-content: center;
 }
+.search-bar>input{
+    background-color: #E6EBE0;
+    border: transparent;
+}
 .profile-header>.pfp>svg{
     height: 5vh;
 }
@@ -39,6 +48,7 @@ input{
     height: 3vh;
     width: 33vw;
     border-radius: 4vh;
+    padding-left: 1vw;
 }
 
 .header-bottom{
@@ -51,45 +61,194 @@ input{
     align-items: center;
     padding-left: 2vw;
 }
+.pfp-big{
+    width: 8vw;
+    height: 8vh;
+}
 .header-buttons{
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
+
+.header-buttons>*{
+    width:5vw;
+    height: 5vh;
+    border-radius: 500px;
+    background-color: #ED6A5A;
+    font-size: 2vh;
+    font-weight: 800;
+    border-color: transparent;
+    color: #F4F1BB;
+}
+
+.header-buttons>*:hover{
+    cursor: pointer;
+    width:7vw;
+    height: 7vh;
+}
+
 .sidebar{
-    grid-area: 1/1/5/2;
+    grid-area: 1/1/3/2;
     display: grid;
     width: 25vw;
     height: 100vh;
-    background-color: gray;
+    background-color: #ED6A5A;
+    padding-left: 1vw;
+    color: #F4F1BB;
 }
 .main{
-    grid-area: 2/2/5/4;
+    grid-area: 2/2/3/3;
     width: 75vw;
     height: 80vh;
     display: grid;
     grid-template: 1fr 1fr / 2fr 1fr;
+    padding-left: 1vw;
+    background-color: #E6EBE0;
 }
 
+
+.projects-box{
+    grid-area: 1/1/3/2;
+    padding-right: 1vw;
+}
 .projects{
-    grid-area: 1/1/2/2;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr; 
+    gap: 4vh;
+    width: 100%;
+    height: 90%;
 }
-.announcements{
-    grid-area: 1/2/2/3;
+.projects>div{
+    border-radius: 1vh;
+    background-color: #F4F1BB;
+    display: grid;
+    grid-template: 1fr 2fr 1.5fr/ 1fr 12fr 3fr;
+    width: 85%;
+    height: 85%;
 }
-.trending{
+
+.projects>div:hover{
+    width: 95%;
+    height: 95%;
+}
+
+.projects>div>.side-color{
+    grid-area: 1/1/4/2;
+    background-color: #5D576B;
+}
+
+.projects>div>h3{
+    grid-area: 1/2/3/2;
+    padding-left: 1vw;
+}
+
+.projects>div>p{
     grid-area: 2/2/3/3;
+    padding-left: 1vw;
+}
+
+.projects>div>a{
+    grid-area: 3/3/4/4;
+    padding-left: 1vw;
+    place-self: center;
+}
+
+.projects>div>a>svg:hover{
+    height: 8vh;
+    width: 8vw;
+}
+
+
+.announcements-box{
+    grid-area: 1/2/2/3;
+    padding-right: 5vw;
+}
+
+.announcements{
+display: grid;
+grid-template: 1fr 1fr 1fr / 1fr;
+background-color: #F4F1BB;
+padding-left: 1vw;
+padding-right: 1vw;
+width: 100%;
+height: 80%;
+}
+
+.announcements>*:not(:last-child){
+    border-bottom: 1px solid #5D576B;
+}
+
+.announcements>*>p{
+    font-size: 1vh;
+}
+
+.trending-box{
+    grid-area: 2/2/3/3;    
+}
+
+.trending{
+    display: grid;
+    background-color: #F4F1BB;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr;
+    padding-left: 1vw;
+    padding-right: 0vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-right: 8vw;
+    margin-left: 3vw;
+    width: 60%;
+    height: 70%;
+}
+
+.trending>*{
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 3fr;
+    
+}
+.trending>*>img{
+    grid-area: 1/1/3/2;
+    border-radius: 50%;
+    background-color: #E6EBE0;
+    border: 2px solid #5D576B;
+    place-self: center;
+}
+
+.trending>*>h5{
+    grid-area: 1/2/2/3;
+    font-weight: 800;
+    place-self: start start;
+}
+
+.trending>*>p{
+    grid-area: 2/2/3/3;
+    place-self: start start;
+    margin: 0%;
 }
 
 svg{
-    height: 4vh;
+    height: 4vh;    
+}
+
+svg:not(.pfp-big):hover{
+    height: 6vh;        
+    cursor: pointer;
 }
 
 .sidebar>*>*{
     display: grid;
     grid-template: 1fr/1fr 3fr;
     place-items: center start;
+    cursor: pointer;
 }
+
+
+.sidebar>* div:hover svg,
+.sidebar>* div:hover svg {
+    height: 6vh;    
+    cursor: pointer;
+}
+
 
 body{
     margin: 0px;
@@ -97,4 +256,13 @@ body{
 }
 *{
     overflow: hidden;
+}
+img{
+    height: 4vh;
+}
+
+
+.trending div:hover img{
+    height: 5vh;    
+    cursor: pointer;
 }
